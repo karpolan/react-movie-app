@@ -54,53 +54,38 @@ When a user selects a movie from the Home Page or the search results, navigate t
 - Write **unit tests** for key components, such as data models and network handling, to demonstrate test-driven development skills.
 - Properly manage **state and lifecycle events** to ensure the app behaves correctly when navigating between screens.
 
-## Build with React + Vite + TypeScript
+## How to use
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone or download the repo from: https://github.com/karpolan/react-mui-vite-ts
+2. Copy `.env.example` file into `.env` file
+3. Replace `TMDB Movie App` and `A test Web Assignment for HighCircl.com` in all files with own texts
+4. Check and resolve all `// TODO: ` directives
+5. Add your own code :)
 
-Currently, two official plugins are available:
+## Available Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In the project directory, you can run:
 
-## Expanding the ESLint configuration
+### `npm run dev`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Configure the top-level `parserOptions` property like this:
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+### `npm run lint`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Checks the code for errors and missing things
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+### `npm run format`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+Formats the code according to `./prettier.config.mjs` config
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+
+### `npm run build`
+
+Builds the app for production or local development to the `dist` folder.<br />
