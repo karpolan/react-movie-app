@@ -1,6 +1,6 @@
 import { List } from '@mui/material';
-import { AppAlert, AppLoading, MovieListItem } from '../../components';
-import { usePopularMovies } from '../../hooks';
+import { AppAlert, AppLoading, MovieListItem } from '@/components';
+import { usePopularMovies } from '@/hooks';
 
 /**
  * Renders list of popular movies
@@ -16,8 +16,6 @@ const PopularMovies = () => {
   if (error) {
     return <AppAlert severity="error">{error}</AppAlert>;
   }
-
-  console.log('popularMovies', popularMovies);
 
   return <List>{popularMovies?.map?.((movie) => <MovieListItem key={movie.id} {...movie} />)}</List>;
 };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { TMDB_ACCESS_TOKEN } from '@/config';
+import { EMULATE_SLOW_NETWORK, TMDB_ACCESS_TOKEN } from '@/config';
 import { TmdbMovieItemResponse } from './types';
+import { sleep } from '../../utils';
 
 const API_ENDPOINT = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
 
@@ -34,6 +35,11 @@ function usePopularMovies(): HookResult {
         };
         const res = await fetch(url, options);
         const json = await res.json();
+
+        if (EMULATE_SLOW_NETWORK) {
+          await sleep(2500);
+        }
+
         setData(json.results);
         setIsLoading(false);
       } catch (error) {

@@ -10,8 +10,8 @@ import PopularMovies from './PopularMovies';
 const HomeView = () => {
   return (
     <AppView>
-      <Typography variant="h4" component="h1">
-        Welcome to TMDB Movie App
+      <Typography variant="h4" component="h3">
+        Popular Movies
       </Typography>
       <PopularMovies />
     </AppView>
