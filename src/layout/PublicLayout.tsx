@@ -19,7 +19,12 @@ const SIDE_BAR_ITEMS: Array<LinkToPage> = [
     icon: 'home',
   },
   {
-    title: 'About',
+    title: 'Popular Movies',
+    path: '/popular',
+    icon: 'visibilityOn',
+  },
+  {
+    title: 'About App',
     path: '/about',
     icon: 'info',
   },

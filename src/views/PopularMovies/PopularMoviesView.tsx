@@ -2,11 +2,11 @@ import { Typography } from '@mui/material';
 import { AppView, PopularMovies } from '@/components';
 
 /**
- * Renders "Home" view
- * @page Home
- * @url /
+ * Renders "Popular Movies" view
+ * @page PopularMovies
+ * @url /popular
  */
-const HomeView = () => {
+const PopularMoviesView = () => {
   return (
     <AppView>
       <Typography variant="h4" component="h3">
@@ -17,4 +17,4 @@ const HomeView = () => {
   );
 };
 
-export default HomeView;
+export default PopularMoviesView;
