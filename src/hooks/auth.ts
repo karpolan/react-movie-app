@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '@/store';
-import { sessionStorageDelete } from '@/utils/sessionStorage';
 
 type CurrentUser = {
   id?: string;

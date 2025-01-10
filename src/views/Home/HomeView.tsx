@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { AppLink, AppView } from '@/components';
+import { AppView } from '@/components';
 
 /**
  * Renders "Home" view
