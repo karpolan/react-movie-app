@@ -32,4 +32,4 @@ export const APP_LINK_UNDERLINE = 'hover'; // 'always
  */
 export const APP_LOADING_COLOR = 'primary'; // 'secondary'
 export const APP_LOADING_SIZE = '3rem'; // 40
-export const APP_LOADING_TYPE = 'circular'; // 'linear'; // 'circular'
+export const APP_LOADING_TYPE = 'linear'; // 'circular'
