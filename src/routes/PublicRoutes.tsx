@@ -13,6 +13,10 @@ const PUBLIC_ROUTES = [
         element: <Navigate to="/" replace />,
       },
       {
+        path: '/',
+        element: <SearchMoviesView />,
+      },
+      {
         path: '/search',
         element: <SearchMoviesView />,
       },
