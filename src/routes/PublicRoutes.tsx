@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { PublicLayout } from '@/layout';
 import { IS_DEBUG } from '@/config';
-import { AboutView, HomeView, PopularMoviesView, SearchMoviesView, SingleMovieView } from '../views';
+import { AboutView, PopularMoviesView, SearchMoviesView, SingleMovieView } from '../views';
 import DevView from '../views/Dev';
 
 const PUBLIC_ROUTES = [
@@ -11,10 +11,6 @@ const PUBLIC_ROUTES = [
       {
         path: '*',
         element: <Navigate to="/" replace />,
-      },
-      {
-        path: '/',
-        element: <HomeView />,
       },
       {
         path: '/search',

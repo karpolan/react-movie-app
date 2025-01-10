@@ -84,8 +84,8 @@ const TopBarAndSideBarLayout: FunctionComponent<Props> = ({ children, sidebarIte
 
   const DarkModeButton = (
     <AppIconButton
-      icon={isDarkMode ? 'day' : 'night'} // Variant 1
-      // icon="dayNight" // Variant 2
+      // icon={isDarkMode ? 'day' : 'night'} // Variant 1
+      icon="dayNight" // Variant 2
       title={isDarkMode ? 'Switch to Light mode' : 'Switch to Dark mode'}
       onClick={toggleDarkMode}
     />

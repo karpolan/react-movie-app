@@ -1,9 +1,8 @@
 import AboutView from './About';
-import HomeView from './Home';
 import NotFoundView from './NotFoundView';
 import PopularMoviesView from './PopularMovies';
 import SearchMoviesView from './SearchMovies';
 import SingleMovieView from './SingleMovie';
 
 // Note: Don't re-export views that needs to be lazy loaded here!
-export { AboutView, HomeView, NotFoundView, PopularMoviesView, SearchMoviesView, SingleMovieView };
+export { AboutView, NotFoundView, PopularMoviesView, SearchMoviesView, SingleMovieView };

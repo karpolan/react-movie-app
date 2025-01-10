@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
-import { AppView, PopularMovies } from '@/components';
+import { AppView, MovieList } from '@/components';
+import { usePopularMovies } from '@/hooks/tmdb';
 
 /**
  * Renders "Popular Movies" view
@@ -7,12 +8,14 @@ import { AppView, PopularMovies } from '@/components';
  * @url /popular
  */
 const PopularMoviesView = () => {
+  const { data: popularMovies, error, isLoading } = usePopularMovies();
+
   return (
     <AppView>
       <Typography variant="h4" component="h3">
         Popular Movies
       </Typography>
-      <PopularMovies />
+      <MovieList movies={popularMovies} error={error} isLoading={isLoading} />
     </AppView>
   );
 };
