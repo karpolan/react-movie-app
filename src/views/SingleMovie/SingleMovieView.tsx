@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { AppView } from '@/components';
+import MovieDetails from './MovieDetails';
 
 /**
  * Renders "Single Movie" view
@@ -8,7 +9,11 @@ import { AppView } from '@/components';
  */
 const SingleMovieView = () => {
   const { movieId } = useParams();
-  return <AppView>ID: {movieId}</AppView>;
+  return (
+    <AppView>
+      <MovieDetails movieId={movieId ?? 'unknown'} />
+    </AppView>
+  );
 };
 
 export default SingleMovieView;

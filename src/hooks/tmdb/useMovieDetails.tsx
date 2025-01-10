@@ -1,31 +1,31 @@
 import { useEffect, useState } from 'react';
 import { EMULATE_SLOW_NETWORK, TMDB_ACCESS_TOKEN } from '@/config';
 import { sleep } from '@/utils';
-import { TmdbMovieItemResponse } from './types';
+import { TmdbMovieDetailsResponse } from './types';
 
-const API_ENDPOINT = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+const API_ENDPOINT = 'https://api.themoviedb.org/3/movie';
 
 interface HookResult {
-  data: TmdbMovieItemResponse[] | undefined;
+  data: TmdbMovieDetailsResponse | undefined;
   isLoading: boolean;
   error: string;
 }
 
 /**
- * Hook to fetch popular movies from TMDB API
- * @see https://developer.themoviedb.org/reference/movie-popular-list
+ * Hook to fetch a single movie details from TMDB API
+ * @see https://developer.themoviedb.org/reference/movie-details
  */
-function usePopularMovies(): HookResult {
-  const [data, setData] = useState<TmdbMovieItemResponse[] | undefined>(undefined);
-  const [isLoading, setIsLoading] = useState(true); // True while fetching data
-  const [error, setError] = useState(''); // Error message if any
+function useMovieDetails(movieId: string): HookResult {
+  const [data, setData] = useState<TmdbMovieDetailsResponse | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    async function fetchDataFromApi() {
+    async function fetchDataFromApi(movieId: string) {
       setIsLoading(true);
       setError('');
       try {
-        const url = API_ENDPOINT;
+        const url = `${API_ENDPOINT}/${movieId}`;
         const options = {
           method: 'GET',
           headers: {
@@ -40,7 +40,7 @@ function usePopularMovies(): HookResult {
           await sleep(1000);
         }
 
-        setData(json.results);
+        setData(json);
         setIsLoading(false);
       } catch (error) {
         setError((error as unknown as Error).message);
@@ -48,10 +48,10 @@ function usePopularMovies(): HookResult {
         setIsLoading(false);
       }
     }
-    fetchDataFromApi();
-  }, []);
+    fetchDataFromApi(movieId);
+  }, [movieId]);
 
   return { data, isLoading, error };
 }
 
-export default usePopularMovies;
+export default useMovieDetails;

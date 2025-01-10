@@ -1,4 +1,5 @@
 import usePopularMovies from './usePopularMovies';
+import useMovieDetails from './useMovieDetails';
 
 export * from './types';
-export { usePopularMovies };
+export { useMovieDetails, usePopularMovies };

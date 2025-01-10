@@ -1,6 +1,6 @@
 import { List } from '@mui/material';
 import { AppAlert, AppLoading, MovieListItem } from '@/components';
-import { usePopularMovies } from '@/hooks';
+import { usePopularMovies } from '@/hooks/tmdb';
 
 /**
  * Renders list of popular movies
