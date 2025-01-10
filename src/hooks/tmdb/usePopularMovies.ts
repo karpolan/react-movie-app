@@ -44,6 +44,7 @@ function usePopularMovies(): HookResult {
         setIsLoading(false);
       } catch (error) {
         setError((error as unknown as Error).message);
+        setData(undefined);
       } finally {
         setIsLoading(false);
       }

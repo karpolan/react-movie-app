@@ -40,10 +40,15 @@ function useMovieDetails(movieId: string): HookResult {
           await sleep(1000);
         }
 
+        if (json.success === false) {
+          throw new Error(json.status_message); // Resource not found or similar error
+        }
+
         setData(json);
         setIsLoading(false);
       } catch (error) {
         setError((error as unknown as Error).message);
+        setData(undefined);
       } finally {
         setIsLoading(false);
       }

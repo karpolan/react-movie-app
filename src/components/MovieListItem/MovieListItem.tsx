@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText, Rating, Stack } from '@mui/material';
 import { TmdbMovieItemResponse } from '@/hooks/tmdb';
-import MovieThumbnail from './MovieThumbnail';
+import MoviePicture from '../MoviePicture';
 
 /**
  * Renders a single movie item for the list
@@ -23,7 +23,7 @@ const MovieListItem: FunctionComponent<TmdbMovieItemResponse> = ({
     <ListItem>
       <ListItemButton href={`/movie/${id}`}>
         <ListItemAvatar sx={{ marginRight: 1 }}>
-          <MovieThumbnail poster_path={poster_path} title={title} />
+          <MoviePicture poster_path={poster_path} title={title} variant="thumbnail" />
         </ListItemAvatar>
         <Stack>
           <ListItemText
@@ -32,6 +32,7 @@ const MovieListItem: FunctionComponent<TmdbMovieItemResponse> = ({
             secondary={release_date}
             secondaryTypographyProps={{ variant: 'body2', component: 'span' }}
           />
+          {/* TODO: Make Movie Rating component */}
           <Rating max={10} value={vote_average} readOnly />
         </Stack>
       </ListItemButton>
