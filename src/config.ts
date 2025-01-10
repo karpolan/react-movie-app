@@ -6,11 +6,14 @@ export const IS_DEBUG = import.meta.env.VITE_DEBUG === 'true'; // Enables loggin
 
 export const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL;
 
+export const TMDB_ACCESS_TOKEN = import.meta.env.VITE_TMDB_ACCESS_TOKEN;
+
 IS_DEBUG &&
   console.log('@/config', {
     environment: getCurrentEnvironment(),
     version: getCurrentVersion(),
     PUBLIC_URL,
+    TMDB_ACCESS_TOKEN,
     IS_PRODUCTION,
     IS_DEBUG,
   });
