@@ -49,23 +49,32 @@ const MovieDetails: FunctionComponent<Props> = ({ movieId }) => {
       </Typography>
       <MoviePicture poster_path={movieDetails.poster_path} title={movieDetails.title} variant="poster" />
       <Typography variant="body1">{movieDetails.overview}</Typography>
-      <Typography variant="caption" component="div">
-        Ganges:{' '}
-        {movieDetails.genres.map((genre) => (
-          <Chip key={genre.id} label={genre.name} sx={{ marginX: 0.5 }} />
-        ))}
-      </Typography>
+
+      {movieDetails?.genres?.length > 0 && (
+        // Not all movies have genres
+        <Typography variant="caption" component="div">
+          Ganges:{' '}
+          {movieDetails.genres.map((genre) => (
+            <Chip key={genre.id} label={genre.name} sx={{ marginX: 0.5 }} />
+          ))}
+        </Typography>
+      )}
+
       {/* TODO: Make Movie Rating component */}
       <Rating max={10} value={movieDetails.vote_average} readOnly />
       <Typography variant="caption" component="div">
         Runtime: {movieDetails.runtime} minutes
       </Typography>
-      <Typography variant="caption" component="div">
-        Languages:{' '}
-        {movieDetails.spoken_languages.map((lang) => (
-          <Chip key={lang.iso_639_1} label={lang.english_name} sx={{ marginX: 0.5 }} />
-        ))}
-      </Typography>
+
+      {movieDetails?.spoken_languages?.length > 0 && (
+        // Not all movies have spoken languages
+        <Typography variant="caption" component="div">
+          Languages:{' '}
+          {movieDetails.spoken_languages.map((lang) => (
+            <Chip key={lang.iso_639_1} label={lang.english_name} sx={{ marginX: 0.5 }} />
+          ))}
+        </Typography>
+      )}
     </Stack>
   );
 };

@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText, Rating, Stack } from '@mui/material';
 import { TmdbMovieItemResponse } from '@/hooks/tmdb';
-import MoviePicture from '../MoviePicture';
+import MoviePicture from './MoviePicture';
 
 /**
  * Renders a single movie item for the list

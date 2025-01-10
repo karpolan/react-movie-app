@@ -2,9 +2,9 @@
 import MovieList from './MovieList';
 import MovieListItem from './MovieListItem';
 import MoviePicture from './MoviePicture';
-import PopularMovies from './PopularMovies';
 import SearchBar from './SearchBar';
+import MovieRating from './MovieRating';
 
 export * from './common';
 export * from './dialogs';
-export { MovieList, MovieListItem, MoviePicture, PopularMovies, SearchBar };
+export { MovieList, MovieListItem, MoviePicture, MovieRating, SearchBar };
