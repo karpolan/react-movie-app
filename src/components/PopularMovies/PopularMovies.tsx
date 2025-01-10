@@ -1,5 +1,4 @@
-import { List } from '@mui/material';
-import { AppAlert, AppLoading, MovieListItem } from '@/components';
+import { MovieList } from '@/components';
 import { usePopularMovies } from '@/hooks/tmdb';
 
 /**
@@ -8,16 +7,7 @@ import { usePopularMovies } from '@/hooks/tmdb';
  */
 const PopularMovies = () => {
   const { data: popularMovies, error, isLoading } = usePopularMovies();
-
-  if (isLoading) {
-    return <AppLoading />;
-  }
-
-  if (error) {
-    return <AppAlert severity="error">{error}</AppAlert>;
-  }
-
-  return <List>{popularMovies?.map?.((movie) => <MovieListItem key={movie.id} {...movie} />)}</List>;
+  return <MovieList movies={popularMovies} error={error} isLoading={isLoading} />;
 };
 
 export default PopularMovies;

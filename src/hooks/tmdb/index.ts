@@ -1,6 +1,7 @@
-import usePopularMovies from './usePopularMovies';
 import useMovieDetails from './useMovieDetails';
+import usePopularMovies from './usePopularMovies';
+import useSearchMovies from './useSearchMovies';
 
 export * from './types';
 export * from './utils';
-export { useMovieDetails, usePopularMovies };
+export { useMovieDetails, usePopularMovies, useSearchMovies };

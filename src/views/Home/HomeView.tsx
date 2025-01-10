@@ -1,5 +1,7 @@
-import { Typography } from '@mui/material';
-import { AppView, PopularMovies } from '@/components';
+import { useState } from 'react';
+import { AppView, MovieList } from '@/components';
+import { useSearchMovies } from '@/hooks/tmdb';
+import SearchBar from './SearchBar';
 
 /**
  * Renders "Home" view
@@ -7,12 +9,20 @@ import { AppView, PopularMovies } from '@/components';
  * @url /
  */
 const HomeView = () => {
+  const [searchText, setSearchText] = useState('');
+  const { data: matchingMovies, isLoading, error } = useSearchMovies(searchText);
+
+  const onSearch = (newSearchText: string) => {
+    // if (searchText === newSearchText) {
+    //   return; // No need to search again
+    // }
+    setSearchText(newSearchText);
+  };
+
   return (
     <AppView>
-      <Typography variant="h4" component="h3">
-        Popular Movies
-      </Typography>
-      <PopularMovies />
+      <SearchBar onSearch={onSearch} />
+      <MovieList movies={matchingMovies} isLoading={isLoading} error={error} />
     </AppView>
   );
 };

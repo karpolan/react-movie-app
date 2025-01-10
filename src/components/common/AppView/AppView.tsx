@@ -1,6 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
 import { Stack, StackProps } from '@mui/material';
-import { CONTENT_MAX_WIDTH, CONTENT_MIN_WIDTH } from '@/components/config';
+import { CONTENT_MAX_WIDTH } from '@/components/config';
 import { useIsMobile } from '@/hooks';
 
 /**
@@ -9,7 +9,7 @@ import { useIsMobile } from '@/hooks';
  */
 const AppView: FunctionComponent<PropsWithChildren<StackProps>> = ({ children, minWidth, ...restOfProps }) => {
   const isMobile = useIsMobile();
-  const minWidthToRender = isMobile ? '100%' : (minWidth ?? CONTENT_MIN_WIDTH);
+  const minWidthToRender = isMobile ? '100%' : (minWidth ?? CONTENT_MAX_WIDTH);
 
   return (
     <Stack alignSelf="center" gap={2} maxWidth={CONTENT_MAX_WIDTH} minWidth={minWidthToRender} {...restOfProps}>
