@@ -37,7 +37,7 @@ function usePopularMovies(): HookResult {
         const json = await res.json();
 
         if (EMULATE_SLOW_NETWORK) {
-          await sleep(2500);
+          await sleep(1000);
         }
 
         setData(json.results);

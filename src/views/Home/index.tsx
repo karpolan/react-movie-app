@@ -1,3 +1,3 @@
-import HomeView from './HomeView';
+import SingleMovieView from './HomeView';
 
-export default HomeView;
+export default SingleMovieView;
