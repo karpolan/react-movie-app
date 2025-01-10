@@ -6,7 +6,7 @@ import { TmdbMovieItemResponse } from './types';
 const API_ENDPOINT = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
 
 interface HookResult {
-  data: TmdbMovieItemResponse[] | undefined;
+  data: TmdbMovieItemResponse[];
   isLoading: boolean;
   error: string;
 }
@@ -16,7 +16,7 @@ interface HookResult {
  * @see https://developer.themoviedb.org/reference/movie-popular-list
  */
 function usePopularMovies(): HookResult {
-  const [data, setData] = useState<TmdbMovieItemResponse[] | undefined>(undefined);
+  const [data, setData] = useState<TmdbMovieItemResponse[]>([]);
   const [isLoading, setIsLoading] = useState(true); // True while fetching data
   const [error, setError] = useState(''); // Error message if any
 
@@ -37,14 +37,18 @@ function usePopularMovies(): HookResult {
         const json = await res.json();
 
         if (EMULATE_SLOW_NETWORK) {
-          await sleep(1000);
+          await sleep(500);
+        }
+
+        if (json.success === false) {
+          throw new Error(json.status_message); // Resource not found or similar error
         }
 
         setData(json.results);
         setIsLoading(false);
       } catch (error) {
         setError((error as unknown as Error).message);
-        setData(undefined);
+        setData([]); // Clear data
       } finally {
         setIsLoading(false);
       }

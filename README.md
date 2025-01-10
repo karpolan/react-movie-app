@@ -54,14 +54,6 @@ When a user selects a movie from the Home Page or the search results, navigate t
 - Write **unit tests** for key components, such as data models and network handling, to demonstrate test-driven development skills.
 - Properly manage **state and lifecycle events** to ensure the app behaves correctly when navigating between screens.
 
-## How to use
-
-1. Clone or download the repo from: https://github.com/karpolan/react-mui-vite-ts
-2. Copy `.env.example` file into `.env` file
-3. Replace `TMDB Movie App` and `A test Web Assignment for HighCircl.com` in all files with own texts
-4. Check and resolve all `// TODO: ` directives
-5. Add your own code :)
-
 ## Available Scripts
 
 In the project directory, you can run:

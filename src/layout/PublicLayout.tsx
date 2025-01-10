@@ -14,12 +14,17 @@ const TITLE_PUBLIC = 'TMDB Movie App'; // Title for pages without/before authent
  */
 const SIDE_BAR_ITEMS: Array<LinkToPage> = [
   {
-    title: 'Home',
-    path: '/home',
-    icon: 'home',
+    title: 'Search Movies',
+    path: '/search',
+    icon: 'search',
   },
   {
-    title: 'About',
+    title: 'Popular Movies',
+    path: '/popular',
+    icon: 'visibilityOn',
+  },
+  {
+    title: 'About App',
     path: '/about',
     icon: 'info',
   },
@@ -38,12 +43,17 @@ IS_DEBUG &&
  */
 const BOTTOM_BAR_ITEMS: Array<LinkToPage> = [
   {
-    title: 'Home',
-    path: '/home',
-    icon: 'home',
+    title: 'Search Movies',
+    path: '/search',
+    icon: 'search',
   },
   {
-    title: 'About',
+    title: 'Popular Movies',
+    path: '/popular',
+    icon: 'visibilityOn',
+  },
+  {
+    title: 'About App',
     path: '/about',
     icon: 'info',
   },

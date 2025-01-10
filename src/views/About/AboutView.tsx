@@ -1,6 +1,7 @@
 import { Card, CardActions, CardContent, CardHeader } from '@mui/material';
 import { AppButton, AppView } from '@/components';
 import { getCurrentVersion } from '@/utils';
+import { CONTENT_MIN_WIDTH } from '../../components/config';
 
 /**
  * Renders "About" view
@@ -9,7 +10,7 @@ import { getCurrentVersion } from '@/utils';
  */
 const AboutView = () => {
   return (
-    <AppView>
+    <AppView minWidth={CONTENT_MIN_WIDTH}>
       <Card>
         <CardHeader title="TMDB Movie App" subheader={`Version ${getCurrentVersion()}`} />
         <CardContent>A test Web Assignment for HighCircl.com</CardContent>

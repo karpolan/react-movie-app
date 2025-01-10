@@ -2,7 +2,7 @@
   "type": "module",
   "name": "react-movie-app",
   "description": "TMDB Movie App is a test Web Assignment for HighCircl.com",
-  "version": "0.2.5",
+  "version": "0.3.7",
   "private": true,
   "author": {
     "name": "Anton Karpenko",
